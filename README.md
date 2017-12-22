@@ -89,8 +89,6 @@ So e.g. add
 in the routing block. Then angular will expect there to be a **public/components/jimbo/jimbo.html** template file and it will try to construct a controller called **JimboController**. The contents of the template file will go into the ng-viewport div in the single page.
 
 ### Example new route
-The changes to add a new component/route called "sample" are visible in this commit https://github.com/stevecass/angular-new-router/commit/2ef0088e231d5082f99e76c47184b4b125d32817
-
 Steps:
 * Update the router config with ```{path: '/sample', component: 'sample' },```
 * Implement a controller called SampleController
