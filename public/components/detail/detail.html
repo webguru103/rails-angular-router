@@ -1,0 +1,24 @@
+<p><b>This is the "detail" component.</b></p>
+This is the template for the detail component. When angular switches to an ngNewRouter route which refers to a component called "detail", it will by default request <b>/components/detail/detail.html</b> from the web server. It will also, try to construct a javascript <b>DetailController</b>. These are defaults and you can override them. See the documentation on <a href="https://angular.github.io/router/configuration">configuring the router.</a>
+
+In the context of this app, the detail component (detail is just a name) will show the detail of one kitty. The DetailController (defined in app/assets/javascripts/controllers.js) binds one cat to a variable called detail.cat. This is available in this template as "detail.cat"
+
+<div id="single-kitty-detail">
+  <h1>{{detail.cat.name}}</h1>
+    <div class="kitty-photo">
+      <img ng-src="{{detail.cat.img_url}}" alt="{{detail.cat.name}} photo">
+    </div>
+    <div class="kitty-details">
+      <form id="update-cat">
+        <ul>
+        <li><label for="name">Name</label> <input id="name" ng-model="detail.cat.name"></li>
+        <li><label for="img">Image</label> <input id="img" ng-model="detail.cat.img_url"></li>
+        <li><label for="age">Age</label> <input id="age" ng-model="detail.cat.age"></li>
+        <li><label for="breed">Breed</label> <input id="breed" ng-model="detail.cat.breed"></li>
+        <li><label for="sleep">Likes to sleep</label> <input id="sleep" ng-model="detail.cat.daily_sleep_hours"> hours a day</li>
+        <li><button ng-click="detail.saveKitty()">Save changes</button></li>
+        </ul>
+       </form>
+    </div>
+
+</div>

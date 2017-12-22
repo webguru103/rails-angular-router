@@ -1,0 +1,18 @@
+<p><b>This is the "home" component.</b></p>
+
+<div id="kitty-container">
+  <div class="kitty" ng-repeat="cat in home.cats">
+    <h2>{{cat.name}}</h2>
+    <div class="kitty-photo">
+      <img ng-src="{{cat.img_url}}" alt="{{cat.name}} photo">
+    </div>
+    <div class="kitty-details">
+       <table>
+         <tr><td>Age</td><td>{{cat.age}}</td></tr>
+         <tr><td>Breed</td><td>{{cat.breed}}</td></tr>
+         <tr><td>Likes to sleep</td><td>{{cat.daily_sleep_hours}} hours a day</td></tr>
+        </table>
+        <a ng-link="detail({id: cat.id})">link to detail</a>
+    </div>
+  </div>
+</div>

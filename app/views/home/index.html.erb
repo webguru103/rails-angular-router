@@ -1,0 +1,26 @@
+Rails just renders app/views/home/index.html.erb
+<br><br>
+<div id="app-div" ng-app="an-app" ng-controller="AppController as app">
+<div ng-show="app.rails_current_user">
+    Logged in as {{app.rails_current_user.username}}  <button ng-click="app.logout()">Log out</button>
+</div>
+<div ng-hide="app.rails_current_user">
+  <form>
+    Username: <input ng-model="app.loginform.username">
+    Password: <input type="password" ng-model="app.loginform.password">
+              <input type="submit" value="Log in" ng-click="app.logUserIn()">
+  </form>
+</div>
+  Link with ng-link to the home route: <a ng-link="home">home</a>
+  <div id="viewport-div"  ng-viewport>
+    E.g. at #/ this gets replaced with content of
+    /components/home/home.html
+    and a HomeController is constructed
+  </div>
+</div>
+
+<div><h3>Notes</h3>
+  <ul>
+    <li>Because you are using an angular router, the browser back/forward buttons work properly.</li>
+    <li>Angular is switching in and out the portion of the page with the white background. The browser page never changes.</li>
+</div>
